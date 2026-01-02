@@ -27,7 +27,7 @@ mongoose.connect(mongoURL)
 
 // Routes
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public/index.html"));
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.post("/save", async (req, res) => {
@@ -61,3 +61,4 @@ app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 
 });
+
