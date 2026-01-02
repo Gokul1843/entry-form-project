@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Entry Form</title>
+</head>
+
+<body>
+
+    <h2>Entry Form</h2>
+
+    <input id="name" placeholder="Name"><br><br>
+    <input id="email" placeholder="Email"><br><br>
+    <input id="mobile" placeholder="Mobile"><br><br>
+
+    <button onclick="save()">Save Entry</button>
+
+    <p id="msg"></p>
+
+    <script>
+        function save() {
+            fetch("/save", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: name.value,
+                    email: email.value,
+                    mobile: mobile.value
+                })
+            })
+                .then(res => res.json())
+                .then(data => msg.innerText = data.message);
+        }
+    </script>
+
+</body>
+
+</html>
