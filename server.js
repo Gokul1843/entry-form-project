@@ -9,7 +9,7 @@ const path = require("path");
 const mongoURL = "mongodb+srv://gb600018_db_user:Gokul123@entryfromcluster.yumnuj3.mongodb.net/entryDB?retryWrites=true&w=majority";
 
 // Entry Model
-const Entry = require("./models/Entry");
+const Entry = require("./Entry");
 
 // App setup
 const app = express();
@@ -59,4 +59,5 @@ app.delete("/delete/:id", async (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
+
 });
